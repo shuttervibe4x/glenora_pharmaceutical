@@ -5,7 +5,7 @@ import { categories } from "@/data/products";
 
 export const PopularCategories = () => {
   return (
-    <section className="py-12 md:py-16 bg-muted/50">
+    <section className="py-12 md:py-16 bg-muted/50 overflow-hidden">
       <div className="container">
         <ScrollAnimate animation="fade-up">
           <SectionHeader
