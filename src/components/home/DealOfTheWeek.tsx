@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { CountdownTimer } from "@/components/shared/CountdownTimer";
+import { ScrollAnimate, ScrollAnimateList } from "@/components/shared/ScrollAnimate";
 import { getFutureDate } from "@/hooks/useCountdown";
 import { Star } from "lucide-react";
 
@@ -34,18 +35,23 @@ export const DealOfTheWeek = () => {
   return (
     <section className="py-12 md:py-16 bg-secondary">
       <div className="container">
-        <SectionHeader
-          title="Deal of the Week"
-          subtitle="Don't miss these amazing limited-time offers!"
-          centered
-        />
+        <ScrollAnimate animation="fade-up">
+          <SectionHeader
+            title="Deal of the Week"
+            subtitle="Don't miss these amazing limited-time offers!"
+            centered
+          />
+        </ScrollAnimate>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {dealProducts.map((product, index) => (
+        <ScrollAnimateList
+          animation="fade-up"
+          staggerDelay={150}
+          className="grid md:grid-cols-2 gap-8"
+        >
+          {dealProducts.map((product) => (
             <div
               key={product.id}
-              className="group bg-card rounded-2xl overflow-hidden card-shadow flex flex-col md:flex-row animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group bg-card rounded-2xl overflow-hidden card-shadow flex flex-col md:flex-row"
             >
               {/* Image */}
               <div className="relative w-full md:w-2/5 aspect-square md:aspect-auto img-zoom-container">
@@ -104,7 +110,7 @@ export const DealOfTheWeek = () => {
               </div>
             </div>
           ))}
-        </div>
+        </ScrollAnimateList>
       </div>
     </section>
   );
