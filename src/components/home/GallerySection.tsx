@@ -1,3 +1,5 @@
+import { ScrollAnimateList } from "@/components/shared/ScrollAnimate";
+
 export const GallerySection = () => {
   const images = [
     {
@@ -17,12 +19,15 @@ export const GallerySection = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ScrollAnimateList
+          animation="fade-up"
+          staggerDelay={150}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {images.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl aspect-[4/3] img-zoom-container animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative overflow-hidden rounded-xl aspect-[4/3] img-zoom-container"
             >
               <img
                 src={image.src}
@@ -34,7 +39,7 @@ export const GallerySection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </ScrollAnimateList>
       </div>
     </section>
   );

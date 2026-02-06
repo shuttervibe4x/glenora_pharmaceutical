@@ -1,4 +1,5 @@
 import { Truck, RefreshCw, Tag, Headphones } from "lucide-react";
+import { ScrollAnimateList } from "@/components/shared/ScrollAnimate";
 
 const features = [
   {
@@ -27,12 +28,15 @@ export const TrustStrip = () => {
   return (
     <section className="py-12 md:py-16 bg-muted/50">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {features.map((feature, index) => (
+        <ScrollAnimateList
+          animation="fade-up"
+          staggerDelay={100}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+        >
+          {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left animate-fade-up"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left"
             >
               <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
                 <feature.icon className="h-6 w-6 text-primary" />
@@ -43,7 +47,7 @@ export const TrustStrip = () => {
               </div>
             </div>
           ))}
-        </div>
+        </ScrollAnimateList>
       </div>
     </section>
   );
