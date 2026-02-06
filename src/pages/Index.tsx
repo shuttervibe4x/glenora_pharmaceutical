@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { PromoBanners } from "@/components/home/PromoBanners";
 import { PopularCategories } from "@/components/home/PopularCategories";
 import { InfoStrip } from "@/components/home/InfoStrip";
+import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { LatestProducts } from "@/components/home/LatestProducts";
 import { DealOfTheWeek } from "@/components/home/DealOfTheWeek";
 import { CommitmentBanner } from "@/components/home/CommitmentBanner";
@@ -19,6 +20,7 @@ const Index = () => {
       <PromoBanners />
       <PopularCategories />
       <InfoStrip />
+      <FeaturedProducts />
       <LatestProducts />
       <DealOfTheWeek />
       <CommitmentBanner />
