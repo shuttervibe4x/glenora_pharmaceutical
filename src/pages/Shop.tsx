@@ -52,11 +52,23 @@ const colors = [
   { name: "Gray", value: "bg-gray-500" },
 ];
 
+const PRODUCTS_PER_PAGE = 6;
+
 const Shop = () => {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [priceRange, setPriceRange] = useState([16, 62]);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const paginatedProducts = products.slice(startIndex, startIndex + PRODUCTS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const FilterSidebar = () => (
     <div className="space-y-6">
@@ -335,7 +347,7 @@ const Shop = () => {
                   ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-3" 
                   : "grid-cols-1"
               )}>
-                {products.map((product, index) => (
+                {paginatedProducts.map((product, index) => (
                   <div
                     key={product.id}
                     className="animate-fade-up"
@@ -354,14 +366,30 @@ const Shop = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-primary text-primary bg-primary/10"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
                 >
-                  1
+                  ←
                 </Button>
-                <Button variant="outline" size="sm">
-                  2
-                </Button>
-                <Button variant="outline" size="sm">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <Button
+                    key={page}
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handlePageChange(page)}
+                    className={cn(
+                      currentPage === page && "border-primary text-primary bg-primary/10"
+                    )}
+                  >
+                    {page}
+                  </Button>
+                ))}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                >
                   →
                 </Button>
               </div>
