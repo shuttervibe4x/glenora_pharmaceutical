@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CountdownTimer } from "./CountdownTimer";
 import { cn } from "@/lib/utils";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 export interface Product {
   id: string;
@@ -135,11 +136,14 @@ export const ProductCard = ({
 
         {/* Add to Cart Button */}
         <Button 
+          asChild
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
           size="sm"
         >
-          <ShoppingCart className="h-4 w-4" />
-          Add to Cart
+          <a href={getWhatsAppLink(product.name, product.price)} target="_blank" rel="noopener noreferrer">
+            <ShoppingCart className="h-4 w-4" />
+            Order on WhatsApp
+          </a>
         </Button>
       </div>
     </div>
