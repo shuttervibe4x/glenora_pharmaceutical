@@ -5,6 +5,7 @@ import { CountdownTimer } from "@/components/shared/CountdownTimer";
 import { ScrollAnimate, ScrollAnimateList } from "@/components/shared/ScrollAnimate";
 import { getFutureDate } from "@/hooks/useCountdown";
 import { Star } from "lucide-react";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 const dealProducts = [
   {
@@ -105,7 +106,7 @@ export const DealOfTheWeek = () => {
                 </div>
 
                 <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  <Link to={`/product/${product.id}`}>Shop Now</Link>
+                  <a href={getWhatsAppLink(product.name, product.price)} target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
                 </Button>
               </div>
             </div>
