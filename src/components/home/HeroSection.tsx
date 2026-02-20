@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-medicine.jpg";
 
 export const HeroSection = () => {
   return (
@@ -53,8 +54,8 @@ export const HeroSection = () => {
           <div className="relative animate-fade-left animation-delay-200">
             <div className="relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=700&fit=crop"
-                alt="Healthcare Professional"
+                src={heroImage}
+                alt="Medicine and Healthcare Products"
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
             </div>
