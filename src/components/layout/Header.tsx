@@ -63,7 +63,7 @@ export const Header = () => {
               <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
                 <span className="text-primary-foreground font-bold text-xl">+</span>
               </div>
-              <span className="text-2xl font-bold text-primary hidden sm:block">Medico</span>
+              <span className="text-2xl font-bold text-primary hidden sm:block">Glenora</span>
             </Link>
 
             {/* Search Bar - Desktop */}

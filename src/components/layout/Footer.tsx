@@ -84,10 +84,10 @@ export const Footer = () => {
               <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
                 <span className="text-primary-foreground font-bold text-xl">+</span>
               </div>
-              <span className="text-2xl font-bold text-primary-foreground">Medico</span>
+              <span className="text-2xl font-bold text-primary-foreground">Glenora</span>
             </Link>
             <p className="text-muted-foreground text-sm mb-6">
-              Your trusted online pharmacy for all healthcare needs. Quality medicines delivered to your doorstep.
+              Glenora Pharmaceutical Pvt. Ltd. — Your trusted partner for quality medicines and healthcare solutions.
             </p>
             
             {/* App Store Buttons */}
@@ -171,16 +171,16 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  50-UTC, Beside Orange Hospital, Medical District
+                  Ground Floor, Mansarover Colony, Ancillary Chowk, Beside MECL, Hatia, Ranchi, Jharkhand - 834003
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground text-sm">+00 123-456-789</span>
+                <span className="text-muted-foreground text-sm">+91 700 481 7894 / 7061586649</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground text-sm">demo@example.com</span>
+                <span className="text-muted-foreground text-sm">glenorapharmaceutical@gmail.com</span>
               </li>
             </ul>
 
@@ -205,7 +205,7 @@ export const Footer = () => {
         <div className="container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © 2024 Medico. All rights reserved. Made with ❤️ for healthcare.
+              © 2024 Glenora Pharmaceutical Pvt. Ltd. All rights reserved. Made with ❤️ for healthcare.
             </p>
             
             {/* Payment Icons */}

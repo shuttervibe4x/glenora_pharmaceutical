@@ -178,7 +178,7 @@ export const testimonials = [
     name: "Sarah Johnson",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
     role: "Regular Customer",
-    content: "Excellent service! My orders always arrive on time and the products are genuine. Highly recommend Medico for all your medical needs.",
+    content: "Excellent service! My orders always arrive on time and the products are genuine. Highly recommend Glenora for all your medical needs.",
     rating: 5,
   },
   {
@@ -186,7 +186,7 @@ export const testimonials = [
     name: "Michael Chen",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
     role: "Healthcare Professional",
-    content: "As a nurse, I trust Medico for quality medical supplies. Their customer service is outstanding and prices are competitive.",
+    content: "As a nurse, I trust Glenora for quality medical supplies. Their customer service is outstanding and prices are competitive.",
     rating: 5,
   },
   {
