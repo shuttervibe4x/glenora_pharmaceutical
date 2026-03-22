@@ -32,7 +32,7 @@ export const Header = () => {
       <div className="bg-primary text-primary-foreground">
         <div className="container flex items-center justify-between py-2 text-sm">
           <p className="hidden md:block">
-            🎉 Get up to <span className="font-semibold">10% cashback</span> on all orders!
+            🏥 Glenora Pharmaceutical — <span className="font-semibold">Quality medicines</span> delivered to your doorstep!
           </p>
           <div className="flex items-center gap-4 md:gap-6">
             <Link to="#" className="flex items-center gap-1 hover:underline">

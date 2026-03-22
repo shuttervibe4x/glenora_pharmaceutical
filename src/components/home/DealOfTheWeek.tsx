@@ -96,10 +96,9 @@ export const DealOfTheWeek = () => {
                   </span>
                 </div>
 
-                {/* Countdown */}
+                {/* Availability */}
                 <div className="mb-6">
-                  <p className="text-sm text-muted-foreground mb-2">Hurry up! Offer ends in:</p>
-                  <CountdownTimer targetDate={product.dealEndsAt} variant="default" />
+                  <p className="text-sm text-muted-foreground mb-2">Available now — order via WhatsApp</p>
                 </div>
 
                 <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">

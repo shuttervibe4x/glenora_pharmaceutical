@@ -34,7 +34,7 @@ export const PromoBanners = () => {
               {/* Content */}
               <div className="relative z-10 max-w-[60%]">
                 <span className="inline-block bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full mb-3">
-                  {banner.discount}
+                  {banner.tag}
                 </span>
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                   {banner.title}
