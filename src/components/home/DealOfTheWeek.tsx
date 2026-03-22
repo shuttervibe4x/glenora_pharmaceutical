@@ -61,8 +61,8 @@ export const DealOfTheWeek = () => {
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground text-lg font-bold px-3 py-1 rounded-lg">
-                  -{product.discount}%
+                <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-lg">
+                  Popular
                 </div>
               </div>
 
