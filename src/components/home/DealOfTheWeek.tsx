@@ -94,9 +94,6 @@ export const DealOfTheWeek = () => {
                   <span className="text-2xl font-bold text-primary">
                     ${product.price.toFixed(2)}
                   </span>
-                  <span className="text-lg text-muted-foreground line-through">
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
                 </div>
 
                 {/* Countdown */}
