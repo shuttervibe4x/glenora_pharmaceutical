@@ -38,8 +38,8 @@ export const DealOfTheWeek = () => {
       <div className="container">
         <ScrollAnimate animation="fade-up">
           <SectionHeader
-            title="Deal of the Week"
-            subtitle="Don't miss these amazing limited-time offers!"
+            title="Featured This Week"
+            subtitle="Explore our top-picked healthcare essentials for you"
             centered
           />
         </ScrollAnimate>
@@ -61,8 +61,8 @@ export const DealOfTheWeek = () => {
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground text-lg font-bold px-3 py-1 rounded-lg">
-                  -{product.discount}%
+                <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-lg">
+                  Popular
                 </div>
               </div>
 
@@ -94,15 +94,11 @@ export const DealOfTheWeek = () => {
                   <span className="text-2xl font-bold text-primary">
                     ${product.price.toFixed(2)}
                   </span>
-                  <span className="text-lg text-muted-foreground line-through">
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
                 </div>
 
-                {/* Countdown */}
+                {/* Availability */}
                 <div className="mb-6">
-                  <p className="text-sm text-muted-foreground mb-2">Hurry up! Offer ends in:</p>
-                  <CountdownTimer targetDate={product.dealEndsAt} variant="default" />
+                  <p className="text-sm text-muted-foreground mb-2">Available now — order via WhatsApp</p>
                 </div>
 
                 <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">

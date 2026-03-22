@@ -5,7 +5,7 @@ const banners = [
     id: "1",
     title: "Face Masks",
     subtitle: "Protection starts here",
-    discount: "Up to 40% OFF",
+    tag: "Essential Safety",
     image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=500&h=300&fit=crop",
     bgColor: "bg-secondary",
   },
@@ -13,7 +13,7 @@ const banners = [
     id: "2",
     title: "Medical Equipment",
     subtitle: "Professional grade quality",
-    discount: "New Arrivals",
+    tag: "New Arrivals",
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&h=300&fit=crop",
     bgColor: "bg-primary/5",
   },
@@ -34,7 +34,7 @@ export const PromoBanners = () => {
               {/* Content */}
               <div className="relative z-10 max-w-[60%]">
                 <span className="inline-block bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full mb-3">
-                  {banner.discount}
+                  {banner.tag}
                 </span>
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                   {banner.title}

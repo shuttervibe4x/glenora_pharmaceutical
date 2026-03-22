@@ -20,14 +20,14 @@ export const PromoBannerLarge = () => {
             <div className="relative z-10 p-8 md:p-12 lg:p-16">
               <div className="max-w-2xl">
                 <span className="inline-block bg-accent text-accent-foreground px-4 py-1.5 rounded-full text-sm font-bold mb-4">
-                  Special Offer
+                  Trusted Quality
                 </span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                  Get 25% Off on All Medicines
+                  Your One-Stop Pharmacy Solution
                 </h2>
                 <p className="text-lg opacity-90 mb-8">
-                  Use code <span className="font-bold">HEALTH25</span> at checkout. 
-                  Limited time offer - don't miss out!
+                  From prescription medicines to wellness products — we deliver 
+                  genuine, certified healthcare essentials right to your doorstep.
                 </p>
                 <Button 
                   asChild 
