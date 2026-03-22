@@ -169,11 +169,6 @@ export const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
-                    {item.badge && (
-                      <Badge className={cn("text-[10px] px-1.5 py-0", item.badgeColor)}>
-                        {item.badge}
-                      </Badge>
-                    )}
                   </Link>
                 </li>
               ))}
