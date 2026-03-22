@@ -205,7 +205,7 @@ export const Footer = () => {
         <div className="container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © 2024 Medico. All rights reserved. Made with ❤️ for healthcare.
+              © 2024 Glenora Pharmaceutical Pvt. Ltd. All rights reserved. Made with ❤️ for healthcare.
             </p>
             
             {/* Payment Icons */}

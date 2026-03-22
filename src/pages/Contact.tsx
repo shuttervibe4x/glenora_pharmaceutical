@@ -19,17 +19,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    content: "50-UTC, Beside Orange Hospital, Medical District",
+    content: "Ground Floor, Mansarover Colony, Ancillary Chowk, Beside MECL, Hatia, Ranchi, Jharkhand, India - 834003",
   },
   {
     icon: Phone,
     title: "Phone",
-    content: "+00 123-456-789",
+    content: "+91 700 481 7894 / 7061586649",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "demo@example.com",
+    content: "glenorapharmaceutical@gmail.com",
   },
   {
     icon: Clock,
