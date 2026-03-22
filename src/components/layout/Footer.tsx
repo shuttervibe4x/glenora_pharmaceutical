@@ -84,10 +84,10 @@ export const Footer = () => {
               <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
                 <span className="text-primary-foreground font-bold text-xl">+</span>
               </div>
-              <span className="text-2xl font-bold text-primary-foreground">Medico</span>
+              <span className="text-2xl font-bold text-primary-foreground">Glenora</span>
             </Link>
             <p className="text-muted-foreground text-sm mb-6">
-              Your trusted online pharmacy for all healthcare needs. Quality medicines delivered to your doorstep.
+              Glenora Pharmaceutical Pvt. Ltd. — Your trusted partner for quality medicines and healthcare solutions.
             </p>
             
             {/* App Store Buttons */}
