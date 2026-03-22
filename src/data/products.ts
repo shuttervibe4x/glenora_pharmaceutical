@@ -186,7 +186,7 @@ export const testimonials = [
     name: "Michael Chen",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
     role: "Healthcare Professional",
-    content: "As a nurse, I trust Medico for quality medical supplies. Their customer service is outstanding and prices are competitive.",
+    content: "As a nurse, I trust Glenora for quality medical supplies. Their customer service is outstanding and prices are competitive.",
     rating: 5,
   },
   {
