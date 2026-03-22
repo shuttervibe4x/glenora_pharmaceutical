@@ -38,8 +38,8 @@ export const DealOfTheWeek = () => {
       <div className="container">
         <ScrollAnimate animation="fade-up">
           <SectionHeader
-            title="Deal of the Week"
-            subtitle="Don't miss these amazing limited-time offers!"
+            title="Featured This Week"
+            subtitle="Explore our top-picked healthcare essentials for you"
             centered
           />
         </ScrollAnimate>
