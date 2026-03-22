@@ -17,9 +17,6 @@ import { Badge } from "@/components/ui/badge";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Shop", path: "/shop" },
-  { name: "Categories", path: "/shop", badge: "SALE", badgeColor: "bg-accent" },
-  { name: "Products", path: "/shop", badge: "HOT", badgeColor: "bg-destructive" },
-  { name: "Top Deals", path: "/shop" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
@@ -172,11 +169,6 @@ export const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
-                    {item.badge && (
-                      <Badge className={cn("text-[10px] px-1.5 py-0", item.badgeColor)}>
-                        {item.badge}
-                      </Badge>
-                    )}
                   </Link>
                 </li>
               ))}
