@@ -171,16 +171,16 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  50-UTC, Beside Orange Hospital, Medical District
+                  Ground Floor, Mansarover Colony, Ancillary Chowk, Beside MECL, Hatia, Ranchi, Jharkhand - 834003
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground text-sm">+00 123-456-789</span>
+                <span className="text-muted-foreground text-sm">+91 700 481 7894 / 7061586649</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground text-sm">demo@example.com</span>
+                <span className="text-muted-foreground text-sm">glenorapharmaceutical@gmail.com</span>
               </li>
             </ul>
 
