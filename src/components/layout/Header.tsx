@@ -36,8 +36,8 @@ export const Header = () => {
           </p>
           <div className="flex items-center gap-4 md:gap-6">
             <Link to="#" className="flex items-center gap-1 hover:underline">
-              <MapPin className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">Track Order</span>
+              {/* <MapPin className="h-3.5 w-3.5" /> */}
+              {/* <span className="hidden sm:inline">Track Order</span> */}
             </Link>
             <div className="flex items-center gap-1 cursor-pointer hover:opacity-80">
               <span>EN</span>
@@ -60,7 +60,7 @@ export const Header = () => {
               <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
                 <span className="text-primary-foreground font-bold text-xl">+</span>
               </div>
-              <span className="text-2xl font-bold text-primary hidden sm:block">Glenora</span>
+              <span className="text-2xl font-bold text-primary hidden sm:block">GLENORA</span>
             </Link>
 
             {/* Search Bar - Desktop */}
@@ -91,7 +91,7 @@ export const Header = () => {
                 <Phone className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-muted-foreground text-xs">Need Help?</p>
-                  <p className="font-semibold">+1 234 567 890</p>
+                  <p className="font-semibold">+91 700 481 7894</p>
                 </div>
               </div>
 
