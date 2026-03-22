@@ -178,7 +178,7 @@ export const testimonials = [
     name: "Sarah Johnson",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
     role: "Regular Customer",
-    content: "Excellent service! My orders always arrive on time and the products are genuine. Highly recommend Medico for all your medical needs.",
+    content: "Excellent service! My orders always arrive on time and the products are genuine. Highly recommend Glenora for all your medical needs.",
     rating: 5,
   },
   {
