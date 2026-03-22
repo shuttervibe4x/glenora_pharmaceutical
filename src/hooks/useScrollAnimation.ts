@@ -18,6 +18,16 @@ export const useScrollAnimation = ({
     const element = ref.current;
     if (!element) return;
 
+    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Avoid leaving sections transparent on mobile/touch devices if the observer
+    // triggers too late or animation is intentionally reduced.
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,7 +39,10 @@ export const useScrollAnimation = ({
           setIsVisible(false);
         }
       },
-      { threshold, rootMargin }
+      {
+        threshold: isMobileViewport ? Math.min(threshold, 0.05) : threshold,
+        rootMargin: isMobileViewport ? "0px 0px 80px 0px" : rootMargin,
+      }
     );
 
     observer.observe(element);

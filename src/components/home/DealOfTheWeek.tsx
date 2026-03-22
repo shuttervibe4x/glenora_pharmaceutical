@@ -92,7 +92,7 @@ export const DealOfTheWeek = () => {
                 {/* Price */}
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl font-bold text-primary">
-                    ${product.price.toFixed(2)}
+                    ₹{product.price.toFixed(2)}
                   </span>
                 </div>
 

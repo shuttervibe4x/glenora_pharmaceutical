@@ -14,7 +14,7 @@ export const InfoStrip = () => {
             </div>
             <div className="hidden md:flex items-center gap-2">
               <Truck className="h-5 w-5" />
-              <span>Free Shipping Over $50</span>
+              <span>Free Shipping Over ₹50</span>
             </div>
             <div className="hidden lg:flex items-center gap-2">
               <Clock className="h-5 w-5" />

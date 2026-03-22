@@ -160,12 +160,12 @@ const ProductDetail = () => {
               {/* Price */}
               <div className="flex items-center gap-4 mb-4">
                 <span className="text-3xl font-bold text-primary">
-                  ${product.price.toFixed(2)}
+                  ₹{product.price.toFixed(2)}
                 </span>
                 {product.originalPrice && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">
-                      ${product.originalPrice.toFixed(2)}
+                      ₹{product.originalPrice.toFixed(2)}
                     </span>
                     <Badge className="bg-destructive">
                       Save {Math.round((1 - product.price / product.originalPrice) * 100)}%
@@ -325,7 +325,7 @@ const ProductDetail = () => {
               {/* Policy Info */}
               <div className="border-t pt-6 space-y-3">
                 {[
-                  { icon: Truck, text: "Free Shipping on orders over $50" },
+                  { icon: Truck, text: "Free Shipping on orders over ₹50" },
                   { icon: Shield, text: "Estimated Delivery: 3-5 business days" },
                   { icon: RotateCcw, text: "30-Day Money Back Guarantee" },
                 ].map((item, i) => (

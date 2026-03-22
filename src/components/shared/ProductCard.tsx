@@ -69,7 +69,7 @@ export const ProductCard = ({
         </div>
 
         {/* Quick Actions */}
-        <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
           <button
             onClick={() => setIsWishlisted(!isWishlisted)}
             className={cn(
@@ -125,11 +125,11 @@ export const ProductCard = ({
         {/* Price */}
         <div className="flex items-center gap-2 mb-3">
           <span className="text-lg font-bold text-primary">
-            ${product.price.toFixed(2)}
+            ₹{product.price.toFixed(2)}
           </span>
           {product.originalPrice && (
             <span className="text-sm text-muted-foreground line-through">
-              ${product.originalPrice.toFixed(2)}
+              ₹{product.originalPrice.toFixed(2)}
             </span>
           )}
         </div>

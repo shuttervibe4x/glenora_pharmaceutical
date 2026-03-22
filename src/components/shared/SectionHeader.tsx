@@ -32,7 +32,11 @@ export const SectionHeader = ({
           <p className="mt-2 text-muted-foreground">{subtitle}</p>
         )}
       </div>
-      {action && <div className="hidden md:block">{action}</div>}
+      {action && (
+        <div className={cn("mt-4", !centered && "md:mt-0")}>
+          {action}
+        </div>
+      )}
     </div>
   );
 };
