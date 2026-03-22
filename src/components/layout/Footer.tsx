@@ -57,7 +57,7 @@ export const Footer = () => {
                 Subscribe to our Newsletter
               </h3>
               <p className="text-primary-foreground/80 mt-1">
-                Get <span className="font-semibold">$20 discount</span> on your first order!
+                Stay updated with the latest <span className="font-semibold">healthcare products & tips</span>!
               </p>
             </div>
             <div className="flex w-full md:w-auto max-w-md gap-2">
