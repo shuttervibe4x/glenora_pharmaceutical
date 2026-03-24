@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Paperclip, Send } from "lucide-react";
 
+const CONTACT_WHATSAPP_NUMBER = "917004817894";
+
 const contactInfo = [
   {
     icon: MapPin,
@@ -48,8 +50,17 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
+
+    const selectedSubject = formData.subject || "General Inquiry";
+    const message = encodeURIComponent(
+      `Hello Glenora Pharmaceuticals,\n\n` +
+      `I would like to contact you through the website form.\n\n` +
+      `Subject: ${selectedSubject}\n` +
+      `Email: ${formData.email}\n` +
+      `Message: ${formData.message}`
+    );
+
+    window.open(`https://wa.me/${CONTACT_WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
 
   return (
@@ -67,7 +78,7 @@ const Contact = () => {
             <ScrollAnimate animation="fade-right">
               <div className="bg-muted rounded-xl overflow-hidden h-[400px] lg:h-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.5424792654997!2d-0.12005368422950673!3d51.50329617963405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c38c8cd1d9%3A0xb78f2474b9a45aa9!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1645134567890!5m2!1sen!2suk"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.06599243174517!2d85.30714580101397!3d23.277419217479945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f51f0051f11547%3A0x312a26db735e0cd!2sMansarovar%20Colony!5e0!3m2!1sen!2sin!4v1774386312243!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: 400 }}

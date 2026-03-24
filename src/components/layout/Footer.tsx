@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
+import glenoraLogo from "@/assets/logo.png";
 import { 
   Facebook, 
   Twitter, 
   Youtube, 
   Instagram, 
   Send,
-  CreditCard,
   MapPin,
   Phone,
   Mail
@@ -18,7 +18,7 @@ const quickLinks = [
   { name: "Shop", path: "/shop" },
   { name: "About Us", path: "/about" },
   { name: "Contact", path: "/contact" },
-  { name: "FAQs", path: "#" },
+  { name: "FAQs", path: "/faqs" },
 ];
 
 const products = [
@@ -27,22 +27,6 @@ const products = [
   { name: "Health Care", path: "/shop" },
   { name: "Personal Care", path: "/shop" },
   { name: "Baby Care", path: "/shop" },
-];
-
-const accountLinks = [
-  { name: "My Account", path: "#" },
-  { name: "Order History", path: "#" },
-  { name: "Wishlist", path: "#" },
-  { name: "Track Order", path: "#" },
-  { name: "Returns", path: "#" },
-];
-
-const aboutLinks = [
-  { name: "About Us", path: "/about" },
-  { name: "Privacy Policy", path: "#" },
-  { name: "Terms & Conditions", path: "#" },
-  { name: "Shipping Policy", path: "#" },
-  { name: "Careers", path: "#" },
 ];
 
 export const Footer = () => {
@@ -77,21 +61,30 @@ export const Footer = () => {
 
       {/* Main Footer */}
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
+            {/* <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
                 <span className="text-primary-foreground font-bold text-xl">+</span>
               </div>
               <span className="text-2xl font-bold text-primary-foreground">Glenora</span>
+            </Link> */}
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2 shrink-0">
+              <img
+                src={glenoraLogo}
+                alt="Glenora logo"
+                className="h-11 w-auto object-contain"
+              />
+              <span className="text-2xl font-bold text-primary sm:block">GLENORA</span>
             </Link>
-            <p className="text-muted-foreground text-sm mb-6">
+            <p className="text-muted-foreground text-sm mt-4 mb-6">
               Glenora Pharmaceutical Pvt. Ltd. — Your trusted partner for quality medicines and healthcare solutions.
             </p>
             
             {/* App Store Buttons */}
-            <div className="flex flex-col gap-2">
+            {/* <div className="flex flex-col gap-2">
               <button className="flex items-center gap-2 bg-background/10 hover:bg-background/20 transition-colors rounded-lg px-4 py-2">
                 <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current text-primary-foreground">
                   <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
@@ -110,7 +103,7 @@ export const Footer = () => {
                   <p className="text-sm font-semibold text-primary-foreground">Google Play</p>
                 </div>
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -148,7 +141,7 @@ export const Footer = () => {
           </div>
 
           {/* Your Account */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold text-primary-foreground mb-4">Your Account</h4>
             <ul className="space-y-3">
               {accountLinks.map((link) => (
@@ -162,7 +155,7 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* About & Contact */}
           <div>
@@ -176,7 +169,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground text-sm">+91 700 481 7894 / 7061586649</span>
+                <span className="text-muted-foreground text-sm">+91 700 481 7894 / +91 879 744 8712</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
@@ -186,13 +179,21 @@ export const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex items-center gap-3 mt-6">
-              {[Facebook, Twitter, Youtube, Instagram].map((Icon, i) => (
+              {[
+                { icon: Facebook, href: "https://wa.me/917004817894", label: "WhatsApp" },
+                { icon: Twitter, href: "mailto:glenorapharmaceutical@gmail.com", label: "Email" },
+                { icon: Youtube, href: "tel:+917004817894", label: "Call" },
+                { icon: Instagram, href: "/contact", label: "Contact Page" },
+              ].map((item, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={item.href}
+                  title={item.label}
+                  target={item.href.startsWith("/") ? undefined : "_blank"}
+                  rel={item.href.startsWith("/") ? undefined : "noopener noreferrer"}
                   className="w-9 h-9 rounded-full bg-background/10 hover:bg-primary flex items-center justify-center transition-colors hover-scale"
                 >
-                  <Icon className="h-4 w-4 text-primary-foreground" />
+                  <item.icon className="h-4 w-4 text-primary-foreground" />
                 </a>
               ))}
             </div>
@@ -203,13 +204,21 @@ export const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-muted-foreground/20">
         <div className="container py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © 2024 Glenora Pharmaceutical Pvt. Ltd. All rights reserved. Made with ❤️ for healthcare.
+              © 2026 Glenora Pharmaceutical Pvt. Ltd. All rights reserved. Made with ❤️ for healthcare.
             </p>
-            
+            <div className="flex items-center gap-4 text-sm">
+              <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-conditions" className="text-muted-foreground hover:text-primary transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+
             {/* Payment Icons */}
-            <div className="flex items-center gap-3">
+            {/* <div className="flex items-center gap-3">
               <span className="text-muted-foreground text-sm mr-2">We Accept:</span>
               {["Visa", "MasterCard", "PayPal", "Amex"].map((name) => (
                 <div
@@ -219,7 +228,7 @@ export const Footer = () => {
                   <CreditCard className="h-4 w-4 text-muted-foreground" />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

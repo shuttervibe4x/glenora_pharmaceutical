@@ -12,6 +12,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CheckSquare, MessageCircle, Users, ArrowRight } from "lucide-react";
+import gstDrugLicenseImage from "@/assets/glenora-gst-drug-license.jpg";
+import panCardImage from "@/assets/glenora-pan-card.jpg";
 
 const tabContent = {
   development: "We focus on continuous development and improvement of our services. Our team stays updated with the latest healthcare trends and technologies to provide you with the best possible experience.",
@@ -43,6 +45,23 @@ const features = [
     description: "Join thousands of satisfied customers who trust us with their healthcare needs.",
   },
 ];
+
+const certificates = [
+  {
+    title: "GST and Drug License",
+    description: "GSTIN: 20AALCG4471F1ZU | DL No. 20B/JH/RN3-156038, 21B/JH/RN3-156039",
+    image: gstDrugLicenseImage,
+    href: gstDrugLicenseImage,
+  },
+  {
+    title: "Company PAN Card",
+    description: "PAN: AALCG4471F | Glenora Pharmaceutical Private Limited",
+    image: panCardImage,
+    href: panCardImage,
+  },
+];
+
+const udyamCertificatePdf = "/certificates/glenora-udyam-certificate.pdf";
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -187,6 +206,64 @@ const About = () => {
               />
             </ScrollAnimate>
           </div>
+
+          {/* Certificates Section */}
+          <ScrollAnimate animation="fade-up">
+            <div className="mb-16">
+              <div className="max-w-3xl mx-auto text-center mb-10">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Certificates & Registrations
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  Important company documents and registrations for Glenora Pharmaceuticals Pvt. Ltd.
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-3 gap-6">
+                {certificates.map((certificate) => (
+                  <div key={certificate.title} className="bg-card rounded-2xl overflow-hidden card-shadow">
+                    <div className="aspect-[4/3] bg-muted">
+                      <img
+                        src={certificate.image}
+                        alt={certificate.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-foreground mb-3">{certificate.title}</h3>
+                      <p className="text-muted-foreground mb-5">{certificate.description}</p>
+                      <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                        <a href={certificate.href} target="_blank" rel="noopener noreferrer">
+                          View Certificate
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+
+                <div className="bg-card rounded-2xl overflow-hidden card-shadow">
+                  <div className="aspect-[4/3] bg-muted">
+                    <iframe
+                      src={`${udyamCertificatePdf}#toolbar=0`}
+                      title="Udyam Registration Certificate"
+                      className="w-full h-full border-0"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-3">Udyam Registration Certificate</h3>
+                    <p className="text-muted-foreground mb-5">
+                      Official Udyam registration document for Glenora Pharmaceuticals Pvt. Ltd.
+                    </p>
+                    <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                      <a href={udyamCertificatePdf} target="_blank" rel="noopener noreferrer">
+                        Open PDF
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimate>
 
           {/* Feature Cards */}
           <ScrollAnimateList

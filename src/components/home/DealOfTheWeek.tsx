@@ -1,38 +1,13 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { CountdownTimer } from "@/components/shared/CountdownTimer";
 import { ScrollAnimate, ScrollAnimateList } from "@/components/shared/ScrollAnimate";
-import { getFutureDate } from "@/hooks/useCountdown";
+import { products } from "@/data/products";
 import { Star } from "lucide-react";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 
-const dealProducts = [
-  {
-    id: "1",
-    name: "Professional Blood Pressure Monitor with Smart Features",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=400&fit=crop",
-    price: 42.50,
-    originalPrice: 50.00,
-    discount: 15,
-    rating: 4.8,
-    reviews: 245,
-    dealEndsAt: getFutureDate(5, 14),
-  },
-  {
-    id: "2",
-    name: "Advanced Digital Thermometer with Fever Alarm",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop",
-    price: 21.50,
-    originalPrice: 25.00,
-    discount: 14,
-    rating: 4.6,
-    reviews: 189,
-    dealEndsAt: getFutureDate(3, 8),
-  },
-];
-
 export const DealOfTheWeek = () => {
+  const dealProducts = products.slice(0, 2);
+
   return (
     <section className="py-12 md:py-16 bg-secondary">
       <div className="container">

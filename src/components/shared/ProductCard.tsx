@@ -19,6 +19,11 @@ export interface Product {
   badgeColor?: string;
   dealEndsAt?: Date;
   inStock?: boolean;
+  description?: string;
+  details?: Array<{
+    label: string;
+    value: string;
+  }>;
 }
 
 interface ProductCardProps {

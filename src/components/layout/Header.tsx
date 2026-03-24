@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+
 import { 
   Search, 
-  User, 
-  Heart, 
-  ShoppingCart, 
   Phone, 
   ChevronDown, 
   Menu, 
-  X,
-  MapPin 
+  X
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
+import glenoraLogo from "@/assets/glenora-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -35,10 +32,6 @@ export const Header = () => {
             Glenora Pharmaceutical — <span className="font-semibold">Quality medicines</span> delivered to your doorstep!
           </p>
           <div className="flex items-center gap-4 md:gap-6">
-            <Link to="#" className="flex items-center gap-1 hover:underline">
-              {/* <MapPin className="h-3.5 w-3.5" /> */}
-              {/* <span className="hidden sm:inline">Track Order</span> */}
-            </Link>
             <div className="flex items-center gap-1 cursor-pointer hover:opacity-80">
               <span>EN</span>
               <ChevronDown className="h-3.5 w-3.5" />
@@ -56,11 +49,13 @@ export const Header = () => {
         <div className="container py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 shrink-0">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-                <span className="text-primary-foreground font-bold text-xl">+</span>
-              </div>
-              <span className="text-2xl font-bold text-primary  sm:block">GLENORA</span>
+            <Link to="/" className="flex items-center gap-3 shrink-0">
+              <img
+                src={glenoraLogo}
+                alt="Glenora logo"
+                className="h-11 w-auto object-contain"
+              />
+              <span className="text-2xl font-bold text-primary sm:block">GLENORA</span>
             </Link>
 
             {/* Search Bar - Desktop */}
@@ -92,17 +87,20 @@ export const Header = () => {
                 <div>
                   <p className="text-muted-foreground text-xs">Need Help?</p>
                   <p className="font-semibold">+91 700 481 7894</p>
+                  
+                  <p className="font-semibold">+91 879 744 8712</p>
+                
                 </div>
               </div>
 
               <div className="flex items-center gap-3 md:gap-4">
-                <Link 
+                {/* <Link 
                   to="#" 
                   className="relative p-2 rounded-full hover:bg-secondary transition-colors hover-scale"
                 >
                   <User className="h-5 w-5 text-foreground" />
-                </Link>
-                <Link 
+                </Link> */}
+                {/* <Link 
                   to="#" 
                   className="relative p-2 rounded-full hover:bg-secondary transition-colors hover-scale"
                 >
@@ -110,8 +108,8 @@ export const Header = () => {
                   <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-accent-foreground text-xs font-bold rounded-full flex items-center justify-center">
                     3
                   </span>
-                </Link>
-                <Link 
+                </Link> */}
+                {/* <Link 
                   to="#" 
                   className="relative p-2 rounded-full hover:bg-secondary transition-colors hover-scale"
                 >
@@ -119,7 +117,7 @@ export const Header = () => {
                   <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-accent-foreground text-xs font-bold rounded-full flex items-center justify-center">
                     2
                   </span>
-                </Link>
+                </Link> */}
 
                 {/* Mobile Menu Button */}
                 <button 
@@ -128,7 +126,7 @@ export const Header = () => {
                 >
                   {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </button>
-              </div>
+             </div>
             </div>
           </div>
 

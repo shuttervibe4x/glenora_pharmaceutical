@@ -83,12 +83,12 @@ const Shop = () => {
                 <ChevronDown className="h-4 w-4" />
               </CollapsibleTrigger>
               <CollapsibleContent className="pl-4 py-2 space-y-2">
-                <a href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                <span className="block text-sm text-muted-foreground">
                   Sub Category 1
-                </a>
-                <a href="#" className="block text-sm text-muted-foreground hover:text-primary">
+                </span>
+                <span className="block text-sm text-muted-foreground">
                   Sub Category 2
-                </a>
+                </span>
               </CollapsibleContent>
             </Collapsible>
           ))}
