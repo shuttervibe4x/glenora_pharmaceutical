@@ -49,13 +49,15 @@ export const Header = () => {
         <div className="container py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 shrink-0">
+            <Link to="/" className="flex items-center shrink-0">
               <img
                 src={glenoraLogo}
                 alt="Glenora logo"
                 className="h-11 w-auto object-contain"
               />
-              <span className="text-2xl font-bold text-primary sm:block">GLENORA</span>
+              <span className="font-brand text-xl font-semibold tracking-[0.08em] text-black-100 sm:block">
+                GLENORA PHARMA
+              </span>
             </Link>
 
             {/* Search Bar - Desktop */}

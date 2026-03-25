@@ -77,7 +77,10 @@ export const Footer = () => {
                 alt="Glenora logo"
                 className="h-11 w-auto object-contain"
               />
-              <span className="text-2xl font-bold text-primary sm:block">GLENORA</span>
+              {/* <span className="text-2xl font-bold text-primary sm:block">GLENORA</span> */}
+              <span className="font-brand text-xl font-semibold tracking-[0.08em] text-black-100 sm:block">
+                GLENORA PHARMACEUTICAL
+              </span>
             </Link>
             <p className="text-muted-foreground text-sm mt-4 mb-6">
               Glenora Pharmaceutical Pvt. Ltd. — Your trusted partner for quality medicines and healthcare solutions.
