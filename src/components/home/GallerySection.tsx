@@ -4,15 +4,15 @@ export const GallerySection = () => {
   const images = [
     {
       src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop",
-      alt: "Medical Laboratory",
+      alt: "Pharmaceutical quality testing laboratory in Ranchi",
     },
     {
       src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop",
-      alt: "Healthcare Products",
+      alt: "Quality healthcare products and medicines by Glenora",
     },
     {
       src: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=400&h=300&fit=crop",
-      alt: "Medical Professional",
+      alt: "Healthcare professional with Glenora Pharmaceutical products",
     },
   ];
 

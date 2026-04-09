@@ -14,12 +14,12 @@ export const HeroSection = () => {
               🏥 Healthcare Solutions
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Your Health, Our{" "}
-              <span className="text-primary">Priority</span>
+              Quality Healthcare,{" "}
+              <span className="text-primary">Your Priority</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              Get quality medicines and healthcare products delivered to your doorstep. 
-              Trusted by millions of customers worldwide.
+              Glenora Pharmaceutical Pvt. Ltd. — your trusted pharmaceutical company in Ranchi, Jharkhand. 
+              Quality medicines and healthcare products for doctors and patients.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
@@ -55,7 +55,7 @@ export const HeroSection = () => {
             <div className="relative z-10">
               <img
                 src={heroImage}
-                alt="Medicine and Healthcare Products"
+                alt="Glenora Pharmaceutical medicines and healthcare products in Ranchi Jharkhand"
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
             </div>

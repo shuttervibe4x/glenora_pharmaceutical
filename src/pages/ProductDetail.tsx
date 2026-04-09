@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { products } from "@/data/products";
 import { Minus, Plus, ShoppingCart, Star } from "lucide-react";
 import { getWhatsAppLink } from "@/lib/whatsapp";
+import { useSEO } from "@/hooks/useSEO";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -27,6 +28,54 @@ const ProductDetail = () => {
     "Store in a cool and dry place away from direct sunlight",
     "Contact on WhatsApp for stock confirmation and ordering",
   ];
+
+  const schema = useMemo(() => [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: product.name,
+      description: product.description || `${product.name} by Glenora Pharmaceutical Pvt. Ltd.`,
+      image: `https://www.glenorapharmaceutical.in${product.image}`,
+      brand: {
+        "@type": "Brand",
+        name: "Glenora Pharmaceuticals",
+      },
+      offers: {
+        "@type": "Offer",
+        price: product.price.toFixed(2),
+        priceCurrency: "INR",
+        availability: product.inStock
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock",
+        seller: {
+          "@type": "Organization",
+          name: "Glenora Pharmaceutical Pvt. Ltd.",
+        },
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: product.rating.toString(),
+        reviewCount: product.reviews.toString(),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.glenorapharmaceutical.in/" },
+        { "@type": "ListItem", position: 2, name: "Shop", item: "https://www.glenorapharmaceutical.in/shop" },
+        { "@type": "ListItem", position: 3, name: product.name, item: `https://www.glenorapharmaceutical.in/product/${product.id}` },
+      ],
+    },
+  ], [product]);
+
+  useSEO({
+    title: `${product.name} | Buy Online — Glenora Pharmaceutical Ranchi`,
+    description: `Buy ${product.name} by Glenora Pharmaceutical at Rs. ${product.price.toFixed(2)}. ${product.description?.slice(0, 120) || 'Quality healthcare product.'} Order via WhatsApp in Ranchi.`,
+    keywords: `${product.name}, buy ${product.name} Ranchi, Glenora Pharmaceutical products, pharmaceutical products Jharkhand`,
+    ogType: "product",
+    schema,
+  });
 
   return (
     <Layout>

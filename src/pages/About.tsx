@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
@@ -14,6 +14,7 @@ import {
 import { CheckSquare, MessageCircle, Users, ArrowRight } from "lucide-react";
 import gstDrugLicenseImage from "@/assets/glenora-gst-drug-license.jpg";
 import panCardImage from "@/assets/glenora-pan-card.jpg";
+import { useSEO } from "@/hooks/useSEO";
 
 const tabContent = {
   development: "We focus on continuous development and improvement of our services. Our team stays updated with the latest healthcare trends and technologies to provide you with the best possible experience.",
@@ -108,6 +109,22 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 const About = () => {
   const [activeTab, setActiveTab] = useState("development");
 
+  const schema = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.glenorapharmaceutical.in/" },
+      { "@type": "ListItem", position: 2, name: "About Us", item: "https://www.glenorapharmaceutical.in/about" },
+    ],
+  }), []);
+
+  useSEO({
+    title: "About Glenora Pharmaceutical | Quality Medicine Company in Jharkhand",
+    description: "Learn about Glenora Pharmaceutical Pvt. Ltd. — our mission, vision, certifications (GST, Drug License, Udyam) and 18+ years commitment to quality healthcare in Ranchi, Jharkhand.",
+    keywords: "about Glenora Pharmaceutical, pharmaceutical company Jharkhand, medicine company Ranchi, WHO-GMP pharma Jharkhand, certified pharma company India",
+    schema,
+  });
+
   return (
     <Layout>
       <PageHeader
@@ -156,7 +173,7 @@ const About = () => {
                 key={index}
                 className="rounded-xl overflow-hidden img-zoom-container aspect-[4/3]"
               >
-                <img src={img} alt="" className="w-full h-full object-cover" />
+                <img src={img} alt={`Glenora Pharmaceutical team and operations - image ${index + 1}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </ScrollAnimateList>
@@ -201,7 +218,7 @@ const About = () => {
             <ScrollAnimate animation="fade-left" delay={200}>
               <img
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop"
-                alt="Innovation"
+                alt="Glenora Pharmaceutical innovation in healthcare medicines"
                 className="rounded-2xl shadow-xl"
               />
             </ScrollAnimate>

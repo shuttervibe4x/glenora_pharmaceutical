@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { ProductCard } from "@/components/shared/ProductCard";
@@ -21,6 +21,7 @@ import {
 import { products, categories } from "@/data/products";
 import { Grid, List, ChevronDown, Filter, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useSEO } from "@/hooks/useSEO";
 
 const sidebarCategories = [
   "Baby Care",
@@ -69,6 +70,22 @@ const Shop = () => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const schema = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.glenorapharmaceutical.in/" },
+      { "@type": "ListItem", position: 2, name: "Shop", item: "https://www.glenorapharmaceutical.in/shop" },
+    ],
+  }), []);
+
+  useSEO({
+    title: "Buy Medicines Online in Ranchi | Glenora Pharmaceutical Shop",
+    description: "Browse & buy quality pharmaceutical products from Glenora Pharmaceutical — capsules, tablets, dietary supplements. Fast delivery in Ranchi, Jharkhand. Order via WhatsApp.",
+    keywords: "buy medicines online Ranchi, pharmaceutical products Jharkhand, medicine shop Ranchi, tablets capsules Ranchi, Glenora products, healthcare products Jharkhand",
+    schema,
+  });
 
   const FilterSidebar = () => (
     <div className="space-y-6">
@@ -411,7 +428,7 @@ const Shop = () => {
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=400&fit=crop"
-                  alt="About our shop"
+                  alt="Glenora Pharmaceutical quality healthcare products and medicines"
                   className="rounded-xl"
                 />
               </div>

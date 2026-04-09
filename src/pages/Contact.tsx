@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { ScrollAnimate, ScrollAnimateList } from "@/components/shared/ScrollAnimate";
@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Paperclip, Send } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const CONTACT_WHATSAPP_NUMBER = "917004817894";
 
@@ -46,6 +47,22 @@ const Contact = () => {
     email: "",
     message: "",
     agreeTerms: false,
+  });
+
+  const schema = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.glenorapharmaceutical.in/" },
+      { "@type": "ListItem", position: 2, name: "Contact Us", item: "https://www.glenorapharmaceutical.in/contact" },
+    ],
+  }), []);
+
+  useSEO({
+    title: "Contact Glenora Pharmaceutical | Ranchi, Jharkhand | +91 7004817894",
+    description: "Contact Glenora Pharmaceutical Pvt. Ltd. in Ranchi, Jharkhand. Get product info, order queries & support. ☎ +91 7004817894 | 📧 glenorapharmaceutical@gmail.com",
+    keywords: "contact Glenora Pharmaceutical, pharmaceutical company phone Ranchi, medicine company contact Jharkhand, Glenora address Ranchi",
+    schema,
   });
 
   const handleSubmit = (e: React.FormEvent) => {

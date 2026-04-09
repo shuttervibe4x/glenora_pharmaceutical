@@ -74,7 +74,7 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-2 shrink-0">
               <img
                 src={glenoraLogo}
-                alt="Glenora logo"
+                alt="Glenora Pharmaceutical Pvt. Ltd. logo"
                 className="h-11 w-auto object-contain"
               />
               {/* <span className="text-2xl font-bold text-primary sm:block">GLENORA</span> */}

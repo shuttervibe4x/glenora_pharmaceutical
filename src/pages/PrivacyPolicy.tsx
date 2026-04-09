@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { useSEO } from "@/hooks/useSEO";
 
 const privacySections = [
   {
@@ -35,6 +36,12 @@ const privacySections = [
 ];
 
 const PrivacyPolicy = () => {
+  useSEO({
+    title: "Privacy Policy | Glenora Pharmaceutical Pvt. Ltd.",
+    description: "Privacy Policy of Glenora Pharmaceutical Pvt. Ltd. — how we collect, use, and protect your information.",
+    noindex: true,
+  });
+
   return (
     <Layout>
       <PageHeader

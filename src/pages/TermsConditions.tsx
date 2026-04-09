@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { useSEO } from "@/hooks/useSEO";
 
 const termsSections = [
   {
@@ -40,6 +41,12 @@ const termsSections = [
 ];
 
 const TermsConditions = () => {
+  useSEO({
+    title: "Terms & Conditions | Glenora Pharmaceutical Pvt. Ltd.",
+    description: "Terms and Conditions governing the use of Glenora Pharmaceutical Pvt. Ltd. website and services.",
+    noindex: true,
+  });
+
   return (
     <Layout>
       <PageHeader

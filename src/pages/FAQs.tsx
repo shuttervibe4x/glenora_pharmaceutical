@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import {
@@ -6,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useSEO } from "@/hooks/useSEO";
 
 const faqItems = [
   {
@@ -35,6 +37,35 @@ const faqItems = [
 ];
 
 const FAQs = () => {
+  const schema = useMemo(() => [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.glenorapharmaceutical.in/" },
+        { "@type": "ListItem", position: 2, name: "FAQs", item: "https://www.glenorapharmaceutical.in/faqs" },
+      ],
+    },
+  ], []);
+
+  useSEO({
+    title: "FAQs | Glenora Pharmaceutical — Orders, Delivery & Support",
+    description: "Frequently asked questions about Glenora Pharmaceutical — how to order medicines, delivery support in Ranchi, product availability & customer support.",
+    keywords: "Glenora Pharmaceutical FAQ, how to order medicines Ranchi, pharma delivery Jharkhand, medicine availability Ranchi",
+    schema,
+  });
   return (
     <Layout>
       <PageHeader title="FAQs" breadcrumbs={[{ label: "FAQs" }]} />
